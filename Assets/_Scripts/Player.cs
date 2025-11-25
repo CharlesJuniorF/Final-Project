@@ -96,8 +96,7 @@ public class Player : MonoBehaviour
     void RotateCamera()
     {
         float horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity * 5;
-        Debug.Log(horizontalRotation);
-        transform.Rotate(0, 0+horizontalRotation, 0);
+        transform.Rotate(0, 0 + horizontalRotation, 0);
 
         verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
