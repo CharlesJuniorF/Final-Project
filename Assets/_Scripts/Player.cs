@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //health
+    public int health = 5;
+
     // Camera Rotation
     public float mouseSensitivity = 2f;
     private float verticalRotation = 0f;
@@ -96,7 +99,7 @@ public class Player : MonoBehaviour
     void RotateCamera()
     {
         float horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity * 5;
-        transform.Rotate(0, 0 + horizontalRotation, 0);
+        transform.Rotate(0, horizontalRotation, 0);
 
         verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
