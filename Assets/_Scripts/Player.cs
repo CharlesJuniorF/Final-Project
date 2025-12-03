@@ -127,4 +127,33 @@ public class Player : MonoBehaviour
             rb.velocity += Vector3.up * Physics.gravity.y * ascendMultiplier * Time.fixedDeltaTime;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("BossBrain"))
+        {
+            Vector3 bossPos = collision.transform.position;
+
+            // Direction away from boss (X/Z only)
+            Vector3 directionAway = transform.position - bossPos;
+            directionAway.y = 0f;
+
+            // Add small randomness BEFORE normalizing
+            directionAway += new Vector3(
+                Random.Range(-4f, 4f),
+                0,
+                Random.Range(-4f, 4f)
+            );
+
+            float upwardForce = 20f;
+            float horizontalForce = 120f;
+
+            rb.velocity = Vector3.zero;
+
+            rb.AddForce(
+                (directionAway * horizontalForce) + (Vector3.up * upwardForce),
+                ForceMode.Impulse
+            );
+        }
+    }
 }
