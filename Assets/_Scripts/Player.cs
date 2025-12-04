@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //health
-    public int health = 5;
-
     // Camera Rotation
     public float mouseSensitivity = 2f;
     private float verticalRotation = 0f;
@@ -154,6 +151,8 @@ public class Player : MonoBehaviour
                 (directionAway * horizontalForce) + (Vector3.up * upwardForce),
                 ForceMode.Impulse
             );
+
+            GameManager.SubtractBossHealth();
         }
     }
 }

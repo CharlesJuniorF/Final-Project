@@ -16,7 +16,9 @@ public class BossProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit the player");
+            Debug.Log("hit the player");
+            GameManager.SubtractPlayerHealth();
+
             Destroy(gameObject);
         }
     }
