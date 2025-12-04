@@ -14,6 +14,7 @@ public class PitfallTrap : MonoBehaviour
             playerBody.AddForce(1.0f, forceUp, 1.0f, ForceMode.Impulse);
 
             //add a health decrement here
+            GameManager.SubtractPlayerHealth();
         }
     }
 

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Net.Http.Headers;
 using UnityEngine;
 
 /*
@@ -27,6 +29,9 @@ public class Player : MonoBehaviour
     private float groundCheckDelay = 0.3f;
     private float playerHeight;
     private float raycastDistance;
+
+    //reset position if the player glitches
+    public Vector3 resetPoint;
 
     void Start()
     {
@@ -72,6 +77,10 @@ public class Player : MonoBehaviour
     {
         MovePlayer();
         ApplyJumpPhysics();
+        if (transform.position.y < -8f || transform.position.y > 60f)
+        {
+            ResetPos();
+        }
     }
 
     void MovePlayer()
@@ -132,27 +141,49 @@ public class Player : MonoBehaviour
             Vector3 bossPos = collision.transform.position;
 
             // Direction away from boss (X/Z only)
-            Vector3 directionAway = transform.position - bossPos;
-            directionAway.y = 0f;
+            Vector3 directionAway = gameObject.transform.position - bossPos;
+            directionAway.y = 0.0f;
 
-            // Add small randomness BEFORE normalizing
-            directionAway += new Vector3(
-                Random.Range(-4f, 4f),
-                0,
-                Random.Range(-4f, 4f)
-            );
+            directionAway = SendAway(directionAway);
 
-            float upwardForce = 20f;
             float horizontalForce = 120f;
 
             rb.velocity = Vector3.zero;
 
-            rb.AddForce(
-                (directionAway * horizontalForce) + (Vector3.up * upwardForce),
-                ForceMode.Impulse
-            );
+            rb.AddForce((directionAway * horizontalForce), ForceMode.Impulse);
 
             GameManager.SubtractBossHealth();
         }
+    }
+
+    private Vector3 SendAway(Vector3 directionAway)
+    {
+        int myRandNum = Random.Range(0, 3);
+
+        if (myRandNum == 1)
+        {
+            directionAway += new Vector3(Random.Range(2, 3), 0, Random.Range(-3, -2));
+        }
+        else if (myRandNum == 2)
+        {
+            directionAway += new Vector3(Random.Range(-3, -2), 0, Random.Range(2, 3));
+        }
+        else if (myRandNum == 3)
+        {
+            directionAway += new Vector3(Random.Range(2, 3), 0, Random.Range(2, 3));
+        }
+        else
+        {
+            directionAway += new Vector3(Random.Range(-3, -2), 0, Random.Range(-3, -2));
+        }
+
+        directionAway.y = 0.0f;
+
+        return directionAway;
+    }
+
+    public void ResetPos()
+    {
+        transform.position = resetPoint;
     }
 }

@@ -16,10 +16,13 @@ public class BossProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("hit the player");
             GameManager.SubtractPlayerHealth();
 
             Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Hit something else");
         }
     }
 }

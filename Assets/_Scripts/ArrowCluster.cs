@@ -21,6 +21,7 @@ public class ArrowCluster : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameManager.SubtractPlayerHealth();
             GameObject.Destroy(gameObject);
         }
     }
