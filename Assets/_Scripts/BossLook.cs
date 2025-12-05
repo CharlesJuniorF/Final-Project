@@ -24,4 +24,12 @@ public class BossLook : MonoBehaviour
             timeSince = 0f;
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (GameManager.bossHealth < 1)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

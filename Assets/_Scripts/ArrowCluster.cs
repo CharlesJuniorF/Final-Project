@@ -14,7 +14,7 @@ public class ArrowCluster : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Arrows"))
         {
             GameObject.Destroy(gameObject);
         }
