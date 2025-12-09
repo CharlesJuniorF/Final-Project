@@ -6,19 +6,21 @@ public class GameManager : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject QuitMenu;
+    public GameObject GameOverMenu;
 
     public static int playerHealth = 5;
     public static int bossHealth = 5;
 
     public static bool _paused;
     public static bool _youSure;
-    public static bool _gameOver = false;
+    public static bool _gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
         PauseMenu.SetActive(false);
         QuitMenu.SetActive(false);
+        GameOverMenu.SetActive(false);
         StartGame();
     }
 
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("player: " + playerHealth + " boss: " + bossHealth);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !_gameOver)
         {
             if (!_paused)
             {
@@ -48,11 +50,18 @@ public class GameManager : MonoBehaviour
             PauseMenu.SetActive(false);
             QuitMenu.SetActive(true);
         }
+
+        if (playerHealth <= 0)
+        {
+            Time.timeScale = 0;
+            _gameOver = true;
+            GameOverMenu.SetActive(true);
+        }
     }
 
     private void StartGame()
     {
-        playerHealth = 5;
+        playerHealth = 1;
         bossHealth = 5;
         _paused = false;
         _gameOver = false;
@@ -61,11 +70,6 @@ public class GameManager : MonoBehaviour
     public static void SubtractPlayerHealth()
     {
         playerHealth--;
-
-        if (playerHealth == 0)
-        {
-            Debug.Log("Game Over");
-        }
     }
 
     public static void SubtractBossHealth()
