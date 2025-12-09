@@ -6350,6 +6350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2903598573180063334, guid: ba5d8273f22dcbf44b37f7441222756c, type: 3}
+      propertyPath: mouseSensitivity
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3027984574486251294, guid: ba5d8273f22dcbf44b37f7441222756c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

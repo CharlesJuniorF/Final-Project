@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Room06.unity
     guid: 179d857733e9f7a49879254d62962c3a
+  - enabled: 1
+    path: Assets/_Scenes/YouWin.unity
+    guid: ad43e746a4eb5c44da1d831fe6330a8b
   m_configObjects: {}

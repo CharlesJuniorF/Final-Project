@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         playerHealth = 5;
-        bossHealth = 1;
+        bossHealth = 5;
         _paused = false;
         _gameOver = false;
         _youWin = false;
