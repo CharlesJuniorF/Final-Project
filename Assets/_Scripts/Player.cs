@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveForward = Input.GetAxisRaw("Vertical");
 
-        RotateCamera();
+        if (!GameManager._paused) RotateCamera();
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -71,6 +71,17 @@ public class Player : MonoBehaviour
             groundCheckTimer -= Time.deltaTime;
         }
 
+
+        if (GameManager._paused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     void FixedUpdate()
