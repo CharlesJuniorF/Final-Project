@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        else if(GameManager._gameOver)
+        else if(GameManager._gameOver || GameManager._youWin)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

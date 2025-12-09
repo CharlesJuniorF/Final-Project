@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject QuitMenu;
     public GameObject GameOverMenu;
+    public GameObject YouWinMenu;
 
     public static int playerHealth = 5;
     public static int bossHealth = 5;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static bool _paused;
     public static bool _youSure;
     public static bool _gameOver;
+    public static bool _youWin;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
         PauseMenu.SetActive(false);
         QuitMenu.SetActive(false);
         GameOverMenu.SetActive(false);
+        YouWinMenu.SetActive(false);
         StartGame();
     }
 
@@ -57,14 +60,23 @@ public class GameManager : MonoBehaviour
             _gameOver = true;
             GameOverMenu.SetActive(true);
         }
+
+        if (bossHealth <= 0)
+        {
+            Time.timeScale = 0;
+            _youWin = true;
+            YouWinMenu.SetActive(true);
+        }
     }
 
     private void StartGame()
     {
-        playerHealth = 1;
-        bossHealth = 5;
+        playerHealth = 5;
+        bossHealth = 1;
         _paused = false;
         _gameOver = false;
+        _youWin = false;
+        Time.timeScale = 1;
     }
 
     public static void SubtractPlayerHealth()

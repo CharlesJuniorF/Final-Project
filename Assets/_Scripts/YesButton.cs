@@ -8,5 +8,6 @@ public class YesButton : MonoBehaviour
     public void onClick()
     {
         SceneManager.LoadScene("MainMenu");
+        GameManager._youSure = false;
     }
 }
