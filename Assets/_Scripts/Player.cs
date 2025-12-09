@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (GameManager._paused)
+        if (GameManager._paused || (GameManager._paused && GameManager._youSure))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

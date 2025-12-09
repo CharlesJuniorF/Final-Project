@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static int bossHealth = 5;
 
     public static bool _paused;
+    public static bool _youSure;
     public static bool _gameOver = false;
 
     // Start is called before the first frame update
@@ -40,6 +41,12 @@ public class GameManager : MonoBehaviour
                 PauseMenu.SetActive(false);
                 _paused = false;
             }
+        }
+
+        if (_youSure && _paused)
+        {
+            PauseMenu.SetActive(false);
+            QuitMenu.SetActive(true);
         }
     }
 
