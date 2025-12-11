@@ -57,11 +57,6 @@ public class Player : MonoBehaviour
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveForward = Input.GetAxisRaw("Vertical");
 
-        if (!GameManager._gameOver)
-        {
-            if(!GameManager._paused) RotateCamera();
-        }
-
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
@@ -101,6 +96,10 @@ public class Player : MonoBehaviour
     {
         MovePlayer();
         ApplyJumpPhysics();
+        if (!GameManager._gameOver)
+        {
+            if (!GameManager._paused) RotateCamera();
+        }
         if (transform.position.y < -8f || transform.position.y > 60f)
         {
             ResetPos();
