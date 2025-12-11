@@ -1,10 +1,6 @@
 using System.Collections;
-using System.Net.Http.Headers;
+using System.Collections.Generic;
 using UnityEngine;
-
-/*
-    This script provides jumping and movement in Unity 3D - Gatsby
-*/
 
 public class Player : MonoBehaviour
 {
@@ -184,6 +180,7 @@ public class Player : MonoBehaviour
     {
         int myRandNum = Random.Range(0, 3);
 
+        //picks a random direction to send the player
         if (myRandNum == 1)
         {
             directionAway += new Vector3(Random.Range(2, 3), 0, Random.Range(-3, -2));

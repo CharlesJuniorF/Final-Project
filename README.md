@@ -3,34 +3,24 @@
 
 #### Author: *Replace this with your name*
 
-##### Modified: *2024-09-06*
+##### Modified: *2025-12-11*
 
 <br>
 
-#### Questions for tutorial assignments: (remove this section for projects)
-**Which tutorial is this? **
-
-**1. Did you make any additions beyond the tutorial requirements? If so, what?**
-> &nbsp;
-><i>(let me know what to look for, any additional keys to use, etc.)</i>   
-> &nbsp;
-
-**2. Did anything give you particular trouble?
-> &nbsp;
-><i>(If something in your assignment doesn't work or you think part of the tutorial can be improved, explain here)</i>   
-> &nbsp;
-
 #### Questions for projects: (remove this section for tutorial assignments)
 **1. What are the controls to your game? How do we play?**   
-
+/*The controls of my game are as follows: WASD is the player's movement and Spacebar is the jump. The way you beat/progress the game is by depleting all of the bosses health. The player while progressing through the game also has to manage their health and make sure they do not perish. Each room becomes harder as the game progresses so the player must stay diligent as so they do not get caught by these traps.*
 > &nbsp;
 ><i>(art, music, etc. Just tell us where you got it, link it here)</i>   
+*Music: https://www.bensound.com/ *
+*Materials: https://assetstore.unity.com/ *
+*Sound fx: https://sfxr.me/ *
 > &nbsp;
  
 
 
 **2. What creative additions/enhancements did you make? How can we find them?**   
-
+*Most things in the game are out in the open. The boss is in the middle of the room, the weakpoint of the boss is on top of them, the room is pretty standard, the traps can be viewed throughout the game as the player progresses. The slow trap makes an appearance in level 2 as a green looking tile, the arrow trap appears in level 3 and is stuck in the walls and looks like a small rect with 5 circles on it, the pitfall trap is in level 4 and is just holes in the ground. Like I said most everything is out in the open.*
 > &nbsp;
 ><i>(If you don't tell us how to experience them, we could easily miss them.)</i>   
 > &nbsp;
@@ -38,15 +28,18 @@
 
 
 **3. Any assets used that you didn't create yourself?**   
-
+*The arrow models I did not create. The skybox I did not create. The material models I did not create. Everything mentioned previously in this statement was gotten off the unity asset store online. The music I got from bensound. The sfx I technically made(very loose technically) with sfxr.*
 > &nbsp;
 ><i>(art, music, etc. Just tell us where you got it, link it here)</i>   
+*Music: https://www.bensound.com/ *
+*Materials: https://assetstore.unity.com/ *
+*Sound fx: https://sfxr.me/ *
 > &nbsp;
  
 
 
 **4. Did you receive help from anyone outside this class or from anyone in this class that is not in a group with you?**   
-
+*No, I can take pride in saying that I independently made the scenes, sound, most of the models/materials and most of the code.*
 > &nbsp;
 ><i>(list their names and what they helped with)</i>   
 > &nbsp;
@@ -54,7 +47,7 @@
 
 
 **5. Did you get help from any AI Code Assistants?**   
-
+*No, I did not recieve aid from code assistants(Unless you count the autofill feature which did speed up fixing my syntax).*
 > &nbsp;
 ><i>(Including things like Chat-GPT, Copilot, etc. Tell us which .cs file to look in for the citation and describe what you learned)</i>   
 > &nbsp;
@@ -62,7 +55,7 @@
 
 
 **6. Did you get help from any online websites, videos, or tutorials?**   
-
+*The movement I did recieve some guidance for. I used parts of online tutorials I found online as well as parts from the FPS shooter. Other than that most everything else is what I believe to be my own and entirely original*
 > &nbsp;
 ><i>(link them here)</i>   
 > &nbsp;
@@ -70,7 +63,7 @@
 
 
 **7. What trouble did you have with this project?**   
-
+*There was a solid week where I had no motivation to code my project. This ultimately caused me to fall behind and stressed me out a good deal. So in other words I struggled with managing my time.*
 > &nbsp;
 ><i>(Even if you didn't complete the project, you can still get partial credit if you tell us about why it's incomplete.)</i>   
 > &nbsp;

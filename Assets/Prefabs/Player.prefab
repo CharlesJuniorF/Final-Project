@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: {fileID: -9139368370602259042}
   hitBoss: {fileID: 8591039973327567813}
-  mouseSensitivity: 5
+  mouseSensitivity: 2
   MoveSpeed: 5
   jumpForce: 15
   fallMultiplier: 4
