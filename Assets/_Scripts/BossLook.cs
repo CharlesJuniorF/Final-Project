@@ -9,6 +9,7 @@ public class BossLook : MonoBehaviour
     public GameObject player;
     public float timeToSpawn = 3.0f;
     public float timeSince = 0.0f;
+    public AudioSource sound;
 
     private void Update()
     {
@@ -21,6 +22,7 @@ public class BossLook : MonoBehaviour
         if (timeSince > timeToSpawn)
         {
             Instantiate(bossProjectile, spawnPosition.position, targetDirect);
+            sound.Play();
             timeSince = 0f;
         }
     }

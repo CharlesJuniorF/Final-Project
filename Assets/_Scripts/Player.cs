@@ -8,6 +8,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //sound
+    public AudioSource jump;
+    public AudioSource hitBoss;
+    
     // Camera Rotation
     public float mouseSensitivity = 2f;
     private float verticalRotation = 0f;
@@ -61,6 +65,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
+            jump.Play();
         }
 
         // Checking when we're on the ground and keeping track of our ground check delay
@@ -172,6 +177,7 @@ public class Player : MonoBehaviour
             rb.AddForce((directionAway * horizontalForce), ForceMode.Impulse);
 
             GameManager.SubtractBossHealth();
+            hitBoss.Play();
         }
     }
 

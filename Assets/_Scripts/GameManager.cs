@@ -87,10 +87,5 @@ public class GameManager : MonoBehaviour
     public static void SubtractBossHealth()
     {
         bossHealth--;
-
-        if (bossHealth == 0)
-        {
-            Debug.Log("Loading next level");
-        }
     }
 }

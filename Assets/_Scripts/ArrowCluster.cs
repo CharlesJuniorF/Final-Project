@@ -6,10 +6,22 @@ using UnityEngine.UIElements;
 public class ArrowCluster : MonoBehaviour
 {
     public float speed = 4.0f;
+    public AudioSource sound;
+    public AudioSource gotHit;
+    private float timeToPlay = 1.25f;
+    private float timeSince = 0.0f;
 
     private void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        timeSince += Time.deltaTime;
+
+        if (timeSince > timeToPlay)
+        {
+            sound.Play();
+            timeSince = 0.0f;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,6 +34,7 @@ public class ArrowCluster : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.SubtractPlayerHealth();
+            gotHit.Play();
             GameObject.Destroy(gameObject);
         }
     }
